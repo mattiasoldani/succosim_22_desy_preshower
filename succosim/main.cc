@@ -30,11 +30,11 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-	cout << "-----" << endl;
+    cout << "-----" << endl;
     cout << "| main.cc: let's start!" << endl;
-	cout << "-----" << endl;
+    cout << "-----" << endl;
 
-	// find execution type (interactive or not) and detect all the macros given as executable arguments
+    // find execution type (interactive or not) and detect all the macros given as executable arguments
     vector<G4String> macros;
     bool interactive = false;
     if  (argc == 1)
@@ -62,23 +62,23 @@ int main(int argc, char** argv)
     auto runManager = new RunManager();
     runManager->SetVerboseLevel(0);  // <<< set run manager verbosity here
 
-	// if in graphical mode, start visualisation
+    // if in graphical mode, start visualisation
     #ifdef G4VIS_USE
         G4VisManager* visManager = new G4VisExecutive("Quiet");  // <<< set visualisation manager verbosity here
-		visManager->SetVerboseLevel(0);  // <<< set visualisation manager verbosity here
+        visManager->SetVerboseLevel(0);  // <<< set visualisation manager verbosity here
         visManager->Initialize();
     #endif
 
-	// load physics list, detector construction and action initialisation
+    // load physics list, detector construction and action initialisation
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // set physics list name here: (new ...()), set PhysicsList for the custom list
-	// e.g. runManager->SetUserInitialization(new FTFP_BERT());
+    // e.g. runManager->SetUserInitialization(new FTFP_BERT());
     runManager->SetUserInitialization(new FTFP_BERT());
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     runManager->SetUserInitialization(new DetectorConstruction());
     runManager->SetUserInitialization(new ActionInitialization());
 
-	// load user interface manager and program executor
+    // load user interface manager and program executor
     #ifdef G4UI_USE
         G4UIExecutive* ui = nullptr;
         if (interactive)
@@ -88,14 +88,14 @@ int main(int argc, char** argv)
     #endif
     G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
-	// execute all the macros given as executable arguments
+    // execute all the macros given as executable arguments
     for (auto macro : macros)
     {
         G4String command = "/control/execute ";
         UImanager->ApplyCommand(command + macro);
     }
 
-	// if in interactive mode, open it; moreover, if in graphical mode, execute the default macro(s) for graphical mode startup
+    // if in interactive mode, open it; moreover, if in graphical mode, execute the default macro(s) for graphical mode startup
     #ifdef G4UI_USE
         if (interactive)
         {
@@ -103,7 +103,7 @@ int main(int argc, char** argv)
             {
                 // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
                 // select macro to be executed at graphical mode startup
-				// e.g. UImanager->ApplyCommand("/control/execute macros/gui.mac");
+                // e.g. UImanager->ApplyCommand("/control/execute macros/gui.mac");
                 UImanager->ApplyCommand("/control/execute macros/gui.mac");
                 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
             }
@@ -116,12 +116,12 @@ int main(int argc, char** argv)
         }
     #endif
 
-	// at the end of the session, delete the run manager
+    // at the end of the session, delete the run manager
     delete runManager;
 	
-	cout << "-----" << endl;
+    cout << "-----" << endl;
     cout << "| main.cc: done, goodbye!" << endl;
-	cout << "-----" << endl;
+    cout << "-----" << endl;
 
     return 0;
 }

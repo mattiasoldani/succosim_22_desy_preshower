@@ -26,6 +26,6 @@ PhysicsList::PhysicsList() : G4VModularPhysicsList()
 
 void PhysicsList::SetCuts()
 {
-  G4VUserPhysicsList::SetCuts();
-  DumpCutValuesTable();
+    G4VUserPhysicsList::SetCuts();
+    DumpCutValuesTable();
 }

@@ -10,9 +10,9 @@
 class PhysicsList : public G4VModularPhysicsList
 {
 public:
-	PhysicsList();
-	~PhysicsList(){;};
-	void 	SetCuts ();
+    PhysicsList();
+    ~PhysicsList(){;};
+    void SetCuts ();
 };
 
 #endif

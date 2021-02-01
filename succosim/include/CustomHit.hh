@@ -24,9 +24,9 @@ extern G4ThreadLocal G4Allocator<VolumeEDepHit> *allocatorVolumeEDepHit;
 
 inline void* VolumeEDepHit::operator new(size_t)
 {
-	if (!allocatorVolumeEDepHit)
-	{allocatorVolumeEDepHit = new G4Allocator<VolumeEDepHit>;}
-	return allocatorVolumeEDepHit->MallocSingle();
+    if (!allocatorVolumeEDepHit)
+    {allocatorVolumeEDepHit = new G4Allocator<VolumeEDepHit>;}
+    return allocatorVolumeEDepHit->MallocSingle();
 }
 
 inline void VolumeEDepHit::operator delete(void *aHit)
@@ -43,17 +43,17 @@ class VolumeTrackingHit : public G4VHit
 public:
     inline void* operator new(size_t);
     inline void  operator delete(void*);
-	void SetTrackId(G4int id) { fId = id; }  // track ID setter
-	void SetX(G4ThreeVector x) { fX = x;}  // position setter
+    void SetTrackId(G4int id) { fId = id; }  // track ID setter
+    void SetX(G4ThreeVector x) { fX = x;}  // position setter
     void SetEDep(G4double eDep) { fEDep = eDep; }  // deposited energy setter
-	G4int GetTrackId() const { return fId; }  // track ID getter
-	G4ThreeVector GetX() const { return fX; }  // position getter
+    G4int GetTrackId() const { return fId; }  // track ID getter
+    G4ThreeVector GetX() const { return fX; }  // position getter
     G4double GetEDep() const { return fEDep; }  // deposited energy getter
 
 private:
-	G4int fId;
+    G4int fId;
     G4double fEDep;
-	G4ThreeVector fX;
+    G4ThreeVector fX;
 };
 
 using VolumeTrackingHitsCollection = G4THitsCollection<VolumeTrackingHit>;
@@ -61,9 +61,9 @@ extern G4ThreadLocal G4Allocator<VolumeTrackingHit> *allocatorVolumeTrackingHit;
 
 inline void* VolumeTrackingHit::operator new(size_t)
 {
-	if (!allocatorVolumeTrackingHit)
-	{allocatorVolumeTrackingHit = new G4Allocator<VolumeTrackingHit>;}
-	return allocatorVolumeTrackingHit->MallocSingle();
+    if (!allocatorVolumeTrackingHit)
+    {allocatorVolumeTrackingHit = new G4Allocator<VolumeTrackingHit>;}
+    return allocatorVolumeTrackingHit->MallocSingle();
 }
 
 inline void VolumeTrackingHit::operator delete(void *aHit)

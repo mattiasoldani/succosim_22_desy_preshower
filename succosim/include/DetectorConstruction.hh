@@ -25,9 +25,9 @@ private:
 	
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
-	// test setup
-	G4VPhysicalVolume* SetupTest(G4NistManager* nist);
-	void SDTest(G4SDManager* sdm);
+    // test setup
+    G4VPhysicalVolume* SetupTest(G4NistManager* nist);
+    void SDTest(G4SDManager* sdm);
 };
 
 #endif

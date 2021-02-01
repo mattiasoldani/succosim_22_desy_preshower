@@ -9,8 +9,8 @@ VolumeEDepSD::VolumeEDepSD(G4String name) :  G4VSensitiveDetector(name)
 G4bool VolumeEDepSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 {
     VolumeEDepHit* hit = new VolumeEDepHit();
-	hit->SetEDep(aStep->GetTotalEnergyDeposit());  // getting total energy deposited in the volume in the step
-	fVolumeEDepHitsCollection->insert(hit);
+    hit->SetEDep(aStep->GetTotalEnergyDeposit());  // getting total energy deposited in the volume in the step
+    fVolumeEDepHitsCollection->insert(hit);
     return true;
 }
 
@@ -30,10 +30,10 @@ VolumeTrackingSD::VolumeTrackingSD(G4String name) :  G4VSensitiveDetector(name)
 G4bool VolumeTrackingSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
 {
     VolumeTrackingHit* hit = new VolumeTrackingHit();
-	hit->SetTrackId(aStep->GetTrack()->GetTrackID());  // getting current track ID
-	hit->SetX(aStep->GetPreStepPoint()->GetPosition());  // getting position at the beginning of the step
-	hit->SetEDep(aStep->GetTotalEnergyDeposit());  // getting total energy deposited in the volume in the step 	
-	fVolumeTrackingHitsCollection->insert(hit);
+    hit->SetTrackId(aStep->GetTrack()->GetTrackID());  // getting current track ID
+    hit->SetX(aStep->GetPreStepPoint()->GetPosition());  // getting position at the beginning of the step
+    hit->SetEDep(aStep->GetTotalEnergyDeposit());  // getting total energy deposited in the volume in the step 	
+    fVolumeTrackingHitsCollection->insert(hit);
     return true;
 }
 

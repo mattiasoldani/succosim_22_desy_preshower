@@ -11,13 +11,13 @@
 class RunAction : public G4UserRunAction
 {
 public:
-	RunAction();
-	~RunAction();
-	void EndOfRunAction(const G4Run*);
+    RunAction();
+    ~RunAction();
+    void EndOfRunAction(const G4Run*);
   
 private:
-	// event-by-event scoring for test simulation
-	void OutputNtupleTest(G4AnalysisManager* analysis);
+    // event-by-event scoring for test simulation
+    void OutputNtupleTest(G4AnalysisManager* analysis);
 };
 
 #endif
