@@ -35,4 +35,4 @@
 # CUSTOM
 
 # build directory
-*build*
+build/
