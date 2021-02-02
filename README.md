@@ -5,7 +5,7 @@ This is **succosim**, a [Geant4](http://www.geant4.org/geant4/) blank template m
 - to provide a tool to validate the experimental results by comparing them with simulated data that are as similar as possible to the real ones;
 - to provide a tool to easily reproduce the beamtest experimental condition in the simulations without the need for a developer-level knowledge of C++ and Geant4.
 
-Nevertheless, a basic, user-level understanding of how a Geant4 simulation works is required in order to exploit succosim to its full potential. Moreover, both Geant4 and [CMAke](https://cmake.org/) need to be installed on your machine in order to compile and run the software.
+Nevertheless, a basic, user-level understanding of how a Geant4 simulation works is required in order to exploit succosim to its full potential. Moreover, both Geant4 and [CMake](https://cmake.org/) need to be installed on your machine in order to compile and run the software.
 
 Tested with:
 
