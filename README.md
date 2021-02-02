@@ -17,7 +17,7 @@ Found a bug? Or simply have any questions, comments or suggestions you'd like to
 ### Test mode
 
 <p align="center">
-    <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="626" height="300">
+    <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="990" height="475">
 </p>
 
 ---
