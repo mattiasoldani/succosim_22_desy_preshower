@@ -7,5 +7,5 @@ Developed with:
 [![Geant4](https://img.shields.io/badge/Geant4-10.05.p01-blue.svg)](http://www.geant4.org/geant4/) [![CMake](https://img.shields.io/badge/CMake-3.18.2-blue.svg)](https://cmake.org/)
 
 <p align="center">
-    <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="790" height="380">
+    <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="313" height="150">
 </p>
