@@ -4,7 +4,7 @@ This is **succosim**, a [Geant4](http://www.geant4.org/geant4/) blank template m
 
 Developed with:
 
-[![Geant4](https://img.shields.io/badge/Geant4-10.05-blue.svg)](http://www.geant4.org/geant4/) [![CMake](https://img.shields.io/badge/CMake-3.18.2-blue.svg)](https://cmake.org/)
+[![Geant4](https://img.shields.io/badge/Geant4-10.05 (patch-01)-blue.svg)](http://www.geant4.org/geant4/) [![CMake](https://img.shields.io/badge/CMake-3.18.2-blue.svg)](https://cmake.org/)
 
 <p align="center">
     <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="990" height="475">
