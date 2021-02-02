@@ -242,10 +242,10 @@ void DetectorConstruction::SDTest(G4SDManager* sdm)
     SetSensitiveDetector("TrackerSili_Logical_1", trackerSD1);
     sdm->AddNewDetector(trackerSD1);
     VolumeTrackingSD* trackerSD2_0 = new VolumeTrackingSD("Tracker_SD_2_0");
-    SetSensitiveDetector("TrackerSili_Logical_2_0", trackerSD1);
+    SetSensitiveDetector("TrackerSili_Logical_2_0", trackerSD2_0);
     sdm->AddNewDetector(trackerSD2_0);
     VolumeTrackingSD* trackerSD2_1 = new VolumeTrackingSD("Tracker_SD_2_1");
-    SetSensitiveDetector("TrackerSili_Logical_2_1", trackerSD1);
+    SetSensitiveDetector("TrackerSili_Logical_2_1", trackerSD2_1);
     sdm->AddNewDetector(trackerSD2_1);
 }
 

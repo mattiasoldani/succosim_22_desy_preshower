@@ -177,8 +177,8 @@ void EventAction::EndOfEventScoringTest(const G4Event* event, G4SDManager* sdm, 
     }
     else
     {
-    analysis->FillNtupleDColumn(0, 5, 0);
-    analysis->FillNtupleDColumn(0, 11, -9999.0 / cm);
+        analysis->FillNtupleDColumn(0, 5, 0);
+        analysis->FillNtupleDColumn(0, 11, -9999.0 / cm);
     }
 	
     // --> module 2 -- 1st
