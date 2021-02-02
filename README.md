@@ -6,6 +6,8 @@ Tested with:
 
 [![Geant4](https://img.shields.io/badge/Geant4-10.05.p01-blue.svg)](http://www.geant4.org/geant4/) [![CMake](https://img.shields.io/badge/CMake-3.18.2-blue.svg)](https://cmake.org/)
 
+Found a bug? Or simply have any questions, comments or suggestions you'd like to talk about? Feel free to contact me at <mattiasoldani93@gmail.com>. And brace yourself, for the best is yet to come!
+
 ---
 
 ### Settings
