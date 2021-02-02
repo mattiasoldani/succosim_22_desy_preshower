@@ -7,6 +7,12 @@ This is **succosim**, a [Geant4](http://www.geant4.org/geant4/) blank template m
 
 Nevertheless, a basic, user-level understanding of how a Geant4 simulation works is required in order to exploit succosim to its full potential.
 
+The succosim source code can be downloaded either as a ZIP archive, from the Code drop-down menu [here](https://github.com/mattiasoldani/anaKrys), or directly from the terminal (open in your project working directory) via
+```shell
+git clone git://github.com/mattiasoldani/succosim.git
+```
+Note: the latter requires  [Git](https://git-scm.com/) installed on your machine.
+
 Tested with:
 
 [![Geant4](https://img.shields.io/badge/Geant4-10.05.p01-blue.svg)](http://www.geant4.org/geant4/) [![CMake](https://img.shields.io/badge/CMake-3.18.2-blue.svg)](https://cmake.org/)
