@@ -34,3 +34,5 @@ Found a bug? Or simply have any questions, comments or suggestions you'd like to
 ---
 
 ### Output
+
+succosim is optimised for an ntuple-based output, in which data from sensitive detectors are written on a periodic basis, e.g. step by step or event by event. The default output file format is the [ROOT](https://root.cern/) [file](https://root.cern/manual/storing_root_objects/) (`.root`), which contains the ntuples as (tree objects)[https://root.cern.ch/doc/master/classTTree.html]. The file name can be set in `src/runAction.cc`. Alternatively, different file formats can be chosen, e.g. the CSV, with the proper "include" directive in `include/Analysis.hh`; note, however, that in general the custom file name (and path) will not be used to save output files that different from the default ROOT one.
