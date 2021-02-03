@@ -23,9 +23,13 @@ Found a bug? Or simply have any questions, comments or suggestions you'd like to
 
 ### Settings
 
+*COMING SOON*
+
 ---
 
 ### Test mode
+
+*COMING SOON*
 
 <p align="center">
     <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="990" height="465">
