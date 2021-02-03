@@ -22,7 +22,7 @@ void EventAction::EndOfEventAction(const G4Event* event)
     if(!hcofEvent) return;
 	
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-    // implement cast of the data collections and operations on them here, or... 
+    // implement cast of the data collections, operations on them and ntuple filling here, or... 
 
     // --------------------------------------------------
     // ...uncomment this line for the test event action
