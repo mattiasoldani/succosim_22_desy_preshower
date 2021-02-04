@@ -1,5 +1,5 @@
-#include "PhysicsList.hh"
 #include <G4ProductionCutsTable.hh>
+
 // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 // add new physics list modules here
 // e.g. #include <G4EmStandardPhysics.hh>
@@ -9,6 +9,8 @@
 #include <G4HadronElasticPhysics.hh>
 #include <G4HadronPhysicsFTFP_BERT.hh>
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#include "PhysicsList.hh"
 
 using namespace std;
 

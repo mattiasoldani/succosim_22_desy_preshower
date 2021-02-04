@@ -18,7 +18,7 @@ public:
 private:
     G4ParticleGun* fGun;
 	
-    // test beam
+    // test beam (implemented in include/TestMode.cc)
     void BeamFeaturesFxdTest(G4ParticleGun* fGunTest);
     void BeamFeaturesRndTest(G4ParticleGun* fGunTest);
 };

@@ -1,7 +1,8 @@
-#include "RunAction.hh"
 #include <G4SystemOfUnits.hh>
-#include "Analysis.hh"
 #include <G4String.hh>
+
+#include "RunAction.hh"
+#include "Analysis.hh"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ RunAction::RunAction() :  G4UserRunAction()
     // e.g. analysis->CreateNtupleDColumn("NEvent");
   
     // --------------------------------------------------
-    // ...uncomment this line for the test ntuple columns
+    // ...uncomment this line for the test ntuple columns (implemented in include/TestMode.cc)
     OutputNtupleTest(analysis);
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     analysis->FinishNtuple(0);
@@ -54,26 +55,4 @@ void RunAction::EndOfRunAction(const G4Run* run)
         G4cout << "| RunAction.cc: end of run --> generated events: " << nofEvents << G4endl;
         G4cout << "-----" << G4endl;
     }
-}
-
-// ============================================================
-// ============================================================
-// RunAction::OutputNtupleTest, i.e. ntuple structure for the test setup
-void RunAction::OutputNtupleTest(G4AnalysisManager* analysis)
-{
-    analysis->CreateNtupleDColumn("NEvent");  // 0
-    analysis->CreateNtupleDColumn("Tracker_NHit_X_0");  // 1
-    analysis->CreateNtupleDColumn("Tracker_NHit_Y_0");  // 2 (this is gonna be identical to the previous -- same silicon layer)
-    analysis->CreateNtupleDColumn("Tracker_NHit_X_1");  // 3
-    analysis->CreateNtupleDColumn("Tracker_NHit_Y_1");  // 4 (this is gonna be identical to the previous -- same silicon layer)
-    analysis->CreateNtupleDColumn("Tracker_NHit_X_2");  // 5
-    analysis->CreateNtupleDColumn("Tracker_NHit_Y_2");  // 6
-    analysis->CreateNtupleDColumn("Tracker_X_0");  // 7
-    analysis->CreateNtupleDColumn("Tracker_Y_0");  // 8
-    analysis->CreateNtupleDColumn("Tracker_X_1");  // 9
-    analysis->CreateNtupleDColumn("Tracker_Y_1");  // 10
-    analysis->CreateNtupleDColumn("Tracker_X_2");  // 11
-    analysis->CreateNtupleDColumn("Tracker_Y_2");  // 12
-    analysis->CreateNtupleDColumn("ECal_EDep");  // 13
-    analysis->CreateNtupleDColumn("GammaCal_EDep");  // 14
 }

@@ -3,8 +3,9 @@
 
 #include <G4SystemOfUnits.hh>
 #include <G4UserEventAction.hh>
-#include <globals.hh>
 #include <G4SDManager.hh>
+#include <globals.hh>
+
 #include "Analysis.hh"
 
 // EventAction::EndOfEventAction, actions executed at each event
@@ -15,7 +16,7 @@ public:
     void EndOfEventAction(const G4Event* event) override;
 	
 private:
-    // event-by-event scoring for test simulation
+    // event-by-event scoring for test simulation (implemented in include/TestMode.cc)
     void EndOfEventScoringTest(const G4Event* event, G4SDManager* sdm, G4HCofThisEvent* hcofEvent, G4AnalysisManager* analysis);
 };
 

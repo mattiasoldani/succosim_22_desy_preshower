@@ -1,4 +1,5 @@
 #include <G4SDManager.hh>
+
 #include "CustomSD.hh"
 
 // VolumeEDepHit/SD, i.e. to detect the energy deposited inside a certain volume

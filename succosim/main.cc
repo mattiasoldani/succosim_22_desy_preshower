@@ -13,18 +13,21 @@
     #include <G4UIExecutive.hh>
 #endif
 
-#include <vector>
 #include <G4String.hh>
 #include <G4UImanager.hh>
+#include <vector>
+
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+// add new physics lists here
+// e.g. #include <FTFP_BERT.hh>
+#include <FTFP_BERT.hh>
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 #include "ActionInitialization.hh"
 #include "DetectorConstruction.hh"
 #include "Analysis.hh"
 #include "PhysicsList.hh"
-// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-// add new physics lists here
-// e.g. #include "FTFP_BERT.hh"
-#include "FTFP_BERT.hh"
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#include "TestMode.cc"
 
 using namespace std;
 

@@ -2,6 +2,7 @@
 #define CUSTOMSD_HH
 
 #include <G4VSensitiveDetector.hh>
+
 #include "CustomHit.hh"
 
 // VolumeEDepHit/SD, i.e. to detect the energy deposited inside a certain volume

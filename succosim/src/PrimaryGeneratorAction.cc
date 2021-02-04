@@ -1,10 +1,11 @@
-#include "PrimaryGeneratorAction.hh"
 #include <G4SystemOfUnits.hh>
 #include <G4ParticleTable.hh>
 #include <G4Event.hh>
 #include <G4ParticleGun.hh>
 #include <Randomize.hh>
 #include <math.h>
+
+#include "PrimaryGeneratorAction.hh"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     // set the beam features that are constant throughout the run here, or...
 
     // --------------------------------------------------
-    // ...uncomment this line for the test beam
+    // ...uncomment this line for the test beam (implemented in include/TestMode.cc)
     BeamFeaturesFxdTest(fGun);
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }
@@ -33,39 +34,10 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     // set the beam features that change at each event here, or...
 
     // --------------------------------------------------
-    // ...uncomment this line for the test beam
+    // ...uncomment this line for the test beam (implemented in include/TestMode.cc)
     BeamFeaturesRndTest(fGun);
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
     // shot the event primary particle
     fGun->GeneratePrimaryVertex(anEvent);
-}
-
-// ============================================================
-// ============================================================
-// PrimaryGeneratorAction::BeamFeaturesFxdTest, i.e. definition of a sample beam for testing (constant features here)
-void PrimaryGeneratorAction::BeamFeaturesFxdTest(G4ParticleGun* fGunTest)
-{	
-    // constant features: particle type, energy
-    G4ParticleDefinition* myParticle;
-    myParticle = G4ParticleTable::GetParticleTable()->FindParticle("e-");
-    fGunTest->SetParticleDefinition(myParticle);
-    G4double energy = 1 * GeV;
-    fGunTest->SetParticleEnergy(energy);
-}
-
-// PrimaryGeneratorAction::BeamFeaturesRndTest, i.e. definition of a sample beam for testing (randomised features here)
-void PrimaryGeneratorAction::BeamFeaturesRndTest(G4ParticleGun* fGunTest)
-{
-    // randomised features: source position (transverse, uniform in a square, whereas longitudinal is fixed), momentum direction
-    G4double zFixed = -3 * cm;
-    G4double xRnd = (5*mm) * (G4UniformRand()-0.5);
-    G4double yRnd = (5*mm) * (G4UniformRand()-0.5);
-    G4ThreeVector gunPosition = G4ThreeVector(xRnd, yRnd, zFixed);
-    fGunTest->SetParticlePosition(gunPosition);
-    G4double pi = 3.1415926535;
-    G4double thRnd = G4RandGauss::shoot(0, 0.001);
-    G4double phiRnd = 2 * pi * G4UniformRand();
-    G4ThreeVector momentumDirection = G4ThreeVector(sin(thRnd)*cos(phiRnd), sin(thRnd)*sin(phiRnd), cos(thRnd));
-    fGunTest->SetParticleMomentumDirection(momentumDirection);
 }

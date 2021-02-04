@@ -25,7 +25,7 @@ private:
 	
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
-    // test setup
+    // test setup (implemented in include/TestMode.cc)
     G4VPhysicalVolume* SetupTest(G4NistManager* nist);
     void SDTest(G4SDManager* sdm);
 };
