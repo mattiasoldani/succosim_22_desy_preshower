@@ -45,8 +45,8 @@ A test mode, comprehensive of the experimental setup, the input beam and the sco
 
 - a larger-area tracking module,
 - a bending magne,
-- a homogeneous calorimeter (a lead glass block) for the photons and
-- a sampling calorimeter (10 layers of lead and BC400 plastic scintillator) for the (negative) charged particles
+- a homogeneous calorimeter (a lead glass block) for photons and
+- a sampling calorimeter (10 layers of lead and BC400 plastic scintillator) for (negative) charged particles
 
 lie downstream. Such a configuration has been chosen to imitate the typical INSULAb beamtest one. All the detectors provide experimental-like data via the scoring system &mdash; see the dedicated section.
 
