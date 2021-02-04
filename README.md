@@ -35,7 +35,7 @@ All the simulation details can be set in different parts of the source code: in 
 - the scored data conditioning and the way the output ntuple is filled in `src/EventAction.cc` &mdash; see the dedicated section;
 - the macro to be executed at the simulation startup in graphics mode in `main.cc`.
 
-Details on all these settings can be found inside the source code files, in the comments.
+Details on all these settings can be found inside the source code files, in the comments. A fully set up test mode can be activated/deactivated by uncommenting/commenting the proper calls in `src/DetectorConstruct.cc`, `src/PrimaryGeneratorAction.cc`, `src/RunAction.cc` and `src/EventAction.cc` &mdash; see the dedicated section.
 
 ---
 
