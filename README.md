@@ -23,7 +23,19 @@ Found a bug? Or simply have any questions, comments or suggestions you'd like to
 
 ### Settings
 
-*COMING SOON*
+All the simulation details can be set in different parts of the source code: in particular, those on
+
+- the name of the simulation executable that result from the compilation in `CMakeTLists.txt`;
+- the experiment physical geometry, the magnetic fields and the detectors in `src/DetectorConstruct.cc` (and in `include/DetectorConstruct.hh`, if organising the `DetectorConstruction::Construct()` content into custom methods);
+- the input particles in `src/PrimaryGeneratorAction.cc`;
+- the so-called physics list, i.e. the library of particles and processes involved in the simulated radiation-matter interaction, in `main.cc` and, in case of a custom list defined manually, in `src/PhysicsList.cc`;
+- the custom sensitive detectors, i.e. the physical object in the experimental setup that are given custom scoring features, in `include/CustomHit.hh`, `src/CustomHit.cc`, `include/CustomSD.hh` and `src/CustomSD.cc`;
+- the output file format in `include/Analysis.hh` &mdash; see the dedicated section;
+- the output ntuple structure in `src/RunAction.cc` &mdash; see the dedicated section;
+- the scored data conditioning and the way the output ntuple is filled in `src/EventAction.cc` &mdash; see the dedicated section;
+- the macro to be executed at the simulation startup in graphics mode in `main.cc`.
+
+Details on all these settings can be found inside the source code files, in the comments.
 
 ---
 
@@ -39,9 +51,9 @@ Found a bug? Or simply have any questions, comments or suggestions you'd like to
 
 ### Output
 
-succosim is optimised for an ntuple-based output, in which data from sensitive detectors are written on a periodic basis, e.g. step by step or event by event. The default output file format is the [ROOT](https://root.cern/) [file](https://root.cern/manual/storing_root_objects/) (`.root`), which contains the ntuples as (tree objects)[https://root.cern.ch/doc/master/classTTree.html]. The output file is saved in `out_data/` (in the build path) at the end of the program execution; its name can be set in `src/runAction.cc`. Alternatively, different file formats can be chosen, e.g. the CSV, with the proper directive in `include/Analysis.hh`; note, however, that in general the custom file name (and path) will not be used to save output files that differ from the default ROOT one.
+succosim is optimised for an ntuple-based output, in which data from sensitive detectors are written on a periodic basis, e.g. step by step or event by event. The default output file format is the [ROOT](https://root.cern/) [file](https://root.cern/manual/storing_root_objects/) (`.root`), which contains the ntuples as (tree objects)[https://root.cern.ch/doc/master/classTTree.html]. The output file is saved in `out_data/` (in the build path) at the end of the program execution; its name can be set in `src/RunAction.cc`. Alternatively, different file formats can be chosen, e.g. the CSV, with the proper directive in `include/Analysis.hh`; note, however, that in general the custom file name (and path) will not be used to save output files that differ from the default ROOT one.
 
-The list of variables (or columns) to be written in the ntuple is specified in `src/runAction.cc`; each variable is given an integer as index, starting from 0 and counting, based on the creation order. The variables are then filled in `src/eventAction.cc`, being referred to using the aforementioned indexes rather than the chosen names; this can be done on a event-by-event basis or with more detail, e.g. step by step, depending on the structure of the data collections defined in the custom hits and sensitive detectors (in `include/CustomHit.hh`, `src/CustomHit.cc`, `include/CustomSD.hh` and `src/CustomSD.cc` &mdash; check comments therein and in the related test mode implementations, in `include/TestMode.cc`) and on the desired output information.
+The list of variables (or columns) to be written in the ntuple is specified in `src/RunAction.cc`; each variable is given an integer as index, starting from 0 and counting, based on the creation order. The variables are then filled in `src/EventAction.cc`, being referred to using the aforementioned indexes rather than the chosen names; this can be done on a event-by-event basis or with more detail, e.g. step by step, depending on the structure of the data collections defined in the custom hits and sensitive detectors (in `include/CustomHit.hh`, `src/CustomHit.cc`, `include/CustomSD.hh` and `src/CustomSD.cc` &mdash; check comments therein and in the related test mode implementations, in `include/TestMode.cc`) and on the desired output information.
 
 In the test mode, the event-by-event scoring of
 
