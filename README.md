@@ -41,7 +41,7 @@ Details on all these settings can be found inside the source code files, in the 
 
 ### Test mode
 
-*COMING SOON*
+A test mode, comprehensive of the experimental setup, the input beam and the scoring system, can be activated/deactivated by uncommenting/commenting the proper calls in `src/DetectorConstruct.cc`, `src/PrimaryGeneratorAction.cc`, `src/RunAction.cc` and `src/EventAction.cc`. The test experiment is shown in the figure below; it consists of a 
 
 <p align="center">
     <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="990" height="465">
