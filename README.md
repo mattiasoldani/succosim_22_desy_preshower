@@ -41,7 +41,14 @@ Details on all these settings can be found inside the source code files, in the 
 
 ### Test mode
 
-A test mode, comprehensive of the experimental setup, the input beam and the scoring system, can be activated/deactivated by uncommenting/commenting the proper calls in `src/DetectorConstruct.cc`, `src/PrimaryGeneratorAction.cc`, `src/RunAction.cc` and `src/EventAction.cc`. The test experiment is shown in the figure below; it consists of a 
+A test mode, comprehensive of the experimental setup, the input beam and the scoring system, can be activated/deactivated by uncommenting/commenting the proper calls in `src/DetectorConstruct.cc`, `src/PrimaryGeneratorAction.cc`, `src/RunAction.cc` and `src/EventAction.cc`. The test experiment is shown in the figure below; it comprises a 1 GeV/*c* electron beam with a square profile with a 1 cm side (right upstream with respect to the first tracking module box) and a divergence of 1 mrad impinging on a 1 *X<sub>0</sub>* thick tungsten cuboid with a 1 cm transverse side. A pair of silicon tracking sensors (with aluminum boxes) is placed upstream with respect to the target, whereas
+
+- a larger-area tracking module,
+- a bending magne,
+- a homogeneous calorimeter (a lead glass block) for the photons and
+- a sampling calorimeter (10 layers of lead and BC400 plastic scintillator) for the (negative) charged particles
+
+lie downstream. Such a configuration has been chosen to imitate the typical INSULAb beamtest one. All the detectors provide experimental-like data via the scoring system &mdash; see the dedicated section.
 
 <p align="center">
     <img src="./readme_pics/test_mode.png" alt="readme_pics/anaKrys_setup_example.png" width="990" height="465">
