@@ -36,3 +36,6 @@
 
 # build directory
 build/
+
+# references directory
+references/
