@@ -44,7 +44,7 @@ Details on all these settings can be found inside the source code files, in the 
 A test mode, comprehensive of the experimental setup, the input beam and the scoring system, can be activated/deactivated by uncommenting/commenting the proper calls in `src/DetectorConstruct.cc`, `src/PrimaryGeneratorAction.cc`, `src/RunAction.cc` and `src/EventAction.cc`. The test experiment is shown in the figure below; it comprises a 1 GeV/*c* electron beam with a square profile with a 1 cm side (right upstream with respect to the first tracking module box) and a divergence of 1 mrad impinging on a 1 *X<sub>0</sub>* thick tungsten cuboid with a 1 cm transverse side. A pair of silicon tracking sensors (with aluminum boxes) is placed upstream with respect to the target, whereas
 
 - a larger-area tracking module,
-- a bending magne,
+- a bending magnet,
 - a homogeneous calorimeter (a lead glass block) for photons and
 - a sampling calorimeter (10 layers of lead and BC400 plastic scintillator) for (negative) charged particles
 
