@@ -14,7 +14,7 @@
 #include <G4Box.hh>
 
 #include "DetectorConstruction.hh"
-#include "CustomHit.hh"
+#include "CustomSD.hh"
 
 // DetectorConstruction::Construct, i.e. where the setup geometry is implemented
 G4VPhysicalVolume* DetectorConstruction::Construct()
