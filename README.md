@@ -4,4 +4,4 @@ This is a clone of the [**succosim** repository](https://github.com/mattiasoldan
 ```shell
 git clone git://github.com/mattiasoldani/succosim_22_desy_preshower.git
 ```
-Further details can be found in the original project documentation.
+Further details can be found in the [original project page](https://github.com/mattiasoldani/succosim).
