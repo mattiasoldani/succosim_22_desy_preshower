@@ -38,7 +38,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
 // 	eneDist->SetEnergyDisType("Mono"); // monochromatic spectrum
 // 	eneDist->SetMonoEnergy(5.6*GeV);
 	eneDist->SetEnergyDisType("Pow"); // power-law spectrum
-	eneDist->SetAlpha(-1); // set 0 for flat distribution, -1 for 1/E distribution
+	eneDist->SetAlpha(0); // set 0 for flat distribution, -1 for 1/E distribution
 	eneDist->SetEmin(1*MeV);
 	eneDist->SetEmax(5.6*GeV);
 

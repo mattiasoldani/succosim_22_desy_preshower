@@ -45,8 +45,8 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     int nveto(1),nDC(4);
     ifstream conf_in("construction.conf"); string line;
     if(conf_in.is_open()){
-        getline(conf_in,line); int nveto=stoi(line);
-        getline(conf_in,line); int nDC=stoi(line);
+        getline(conf_in,line); nveto=stoi(line);
+        getline(conf_in,line); nDC=stoi(line);
         conf_in.close();
     }
     
