@@ -4,12 +4,15 @@
 #include <G4ParticleGun.hh>
 #include <Randomize.hh>
 #include <math.h>
+#include <G4EventManager.hh>
 
 #include "PrimaryGeneratorAction.hh"
 
 #include <G4GeneralParticleSource.hh>
 #include <G4SPSEneDistribution.hh>
 #include <G4SPSAngDistribution.hh>
+
+#include "CustomEventInfo.hh"
 
 using namespace std;
 
@@ -32,13 +35,14 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     fGun->SetParticlePosition(gunPosition);
 	
 	G4SPSEneDistribution *eneDist = fGun->GetCurrentSource()->GetEneDist() ;
-	eneDist->SetEnergyDisType("Mono"); // monochromatic spectrum
-	eneDist->SetMonoEnergy(5.6*GeV);
-	/*eneDist->SetEnergyDisType("Pow"); // power-law spectrum
-	eneDist->SetAlpha(0); // set 0 for flat distribution, -1 for 1/E distribution
+// 	eneDist->SetEnergyDisType("Mono"); // monochromatic spectrum
+// 	eneDist->SetMonoEnergy(5.6*GeV);
+	eneDist->SetEnergyDisType("Pow"); // power-law spectrum
+	eneDist->SetAlpha(-1); // set 0 for flat distribution, -1 for 1/E distribution
 	eneDist->SetEmin(1*MeV);
-	eneDist->SetEmax(5.6*GeV);*/
+	eneDist->SetEmax(5.6*GeV);
 
+    
 	G4SPSAngDistribution *angDist = fGun->GetCurrentSource()->GetAngDist() ;
 	angDist->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.)) ;
 
@@ -64,6 +68,15 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     // BeamFeaturesRndTest(fGun);
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
-    // shot the event primary particle
+    
+    
+    G4int nParticle = G4int(CLHEP::RandFlat::shoot(1., 5.99));
+    
+    
+    fGun->SetNumberOfParticles(nParticle);
+    
+    // shoot the event primary particle
     fGun->GeneratePrimaryVertex(anEvent);
+    
+    
 }
