@@ -35,12 +35,13 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     fGun->SetParticlePosition(gunPosition);
 	
 	G4SPSEneDistribution *eneDist = fGun->GetCurrentSource()->GetEneDist() ;
-// 	eneDist->SetEnergyDisType("Mono"); // monochromatic spectrum
-// 	eneDist->SetMonoEnergy(5.6*GeV);
-	eneDist->SetEnergyDisType("Pow"); // power-law spectrum
-	eneDist->SetAlpha(0); // set 0 for flat distribution, -1 for 1/E distribution
-	eneDist->SetEmin(1*MeV);
-	eneDist->SetEmax(5.6*GeV);
+	eneDist->SetEnergyDisType("Mono"); // monochromatic spectrum
+	eneDist->SetMonoEnergy(1000*MeV);
+	
+//     eneDist->SetEnergyDisType("Pow"); // power-law spectrum
+// 	eneDist->SetAlpha(0); // set 0 for flat distribution, -1 for 1/E distribution
+// 	eneDist->SetEmin(10*MeV);
+// 	eneDist->SetEmax(100*MeV);
 
     
 	G4SPSAngDistribution *angDist = fGun->GetCurrentSource()->GetAngDist() ;
@@ -69,8 +70,10 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	
     
+    //max number of primary particles
+    int nMaxParticle=5;
     
-    G4int nParticle = G4int(CLHEP::RandFlat::shoot(1., 5.99));
+    G4int nParticle = G4int(CLHEP::RandFlat::shoot(1., nMaxParticle+0.99));
     
     
     fGun->SetNumberOfParticles(nParticle);

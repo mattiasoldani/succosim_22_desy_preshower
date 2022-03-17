@@ -29,6 +29,8 @@ RunAction::RunAction() :  G4UserRunAction()
 		ostringstream columnName; columnName << "EDep_DC" << j;
 		analysis->CreateNtupleDColumn(columnName.str());  // 4, 5, ... - up to 8 active converter layers are supported
 	}
+    
+    
   
     // --------------------------------------------------
     // ...uncomment this line for the test ntuple columns (implemented in include/TestMode.cc)

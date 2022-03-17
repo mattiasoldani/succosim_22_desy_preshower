@@ -1,5 +1,6 @@
 #include <G4SystemOfUnits.hh>
 #include <G4SDManager.hh>
+#include <G4RunManager.hh>
 #include <G4THitsMap.hh>
 #include <G4Event.hh>
 #include <G4EventManager.hh>
@@ -67,6 +68,7 @@ void EventAction::EndOfEventAction(const G4Event* event)
 	}
 	
 	G4int eid=event->GetEventID();
+    G4int evtot=G4RunManager::GetRunManager()->GetNumberOfEventsToBeProcessed();
     
     // event number to output ntuple
     analysis->FillNtupleDColumn(0, 0, eid);
@@ -117,7 +119,7 @@ void EventAction::EndOfEventAction(const G4Event* event)
     // add event to ntuple
     analysis->AddNtupleRow(0);
     
-    if(eid%100==0){G4cout<<"Event "<<eid<<"... done!"<<G4endl;}
+    if(eid%500==0){G4cout<<"Event "<<eid<<"... done!\t( "<<100.*((float)eid)/evtot<<" % )      \r"<<flush;}
 
     // --------------------------------------------------
     // ...uncomment this line for the test event action (implemented in include/TestMode.cc)
