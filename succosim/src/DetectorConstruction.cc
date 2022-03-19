@@ -17,6 +17,7 @@
 #include "CustomSD.hh"
 
 #include <vector>
+#include <string>
 
 // DetectorConstruction::Construct, i.e. where the setup geometry is implemented
 G4VPhysicalVolume* DetectorConstruction::Construct()
@@ -39,16 +40,27 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 	G4Material* mat_dummy = nist->FindOrBuildMaterial("G4_W"); // dummy "calorimeter" - G4_W
 	
 	// detector features
+    
+    //read the nr. of scinti tiles from the .conf file
+    int nveto(1),nDC(4);
+    ifstream conf_in("construction.conf"); string line;
+    if(conf_in.is_open()){
+        getline(conf_in,line); nveto=stoi(line);
+        getline(conf_in,line); nDC=stoi(line);
+        conf_in.close();
+    }
+    
 	G4int nModules = 2; // nr. of converter+scintillator (veto excluded) modules - TO BE DEFINED ALSO IN DetectorConstruction::ConstructSDandField (THIS FILE) & IN EventAction.cc!
 	
-	G4double gapZLayers = 1 * cm; // edge-edge space between different layers (i.e. between scintillator and converter layers)
-	G4double gapZScinti = 1 * mm; // in case multiple scintillating tiles are used within single scintillator layers, space between them
+	G4double gapZLayers = 2 * cm; // edge-edge space between different layers (i.e. between scintillator and converter layers)
+	G4double gapZScinti = 2 * mm; // in case multiple scintillating tiles are used within single scintillator layers, space between them
 	G4double sideScinti = 25 * cm; // transverse size of scintillating tiles
-	G4double thicknessScinti = 5 * mm; // thickness of scintillating tiles
+	G4double thicknessScinti = 4 * mm; // thickness of scintillating tiles
 	G4double sideConv = 10 * cm; // transverse size of converter tiles
 	G4double thicknessConv = 0.2 * mat_conv->GetRadlen(); // total thickness of converter tiles (as a fraction of X_0) - if multiple modules are selected, value is splitted evenly between modules
-	G4int nTilesVeto = 2; // nr. of scintillating tiles in the charge veto
-	G4int nTilesDC = 4; // nr. of scintillating tiles in each downstream scintillator
+	G4int nTilesVeto = nveto; // nr. of scintillating tiles in the charge veto
+	G4int nTilesDC = nDC; // nr. of scintillating tiles in each downstream scintillator
+	
 	
 	G4double thicknessVeto = nTilesVeto*thicknessScinti + (nTilesVeto-1)*gapZScinti;
 	G4double thicknessConvSingle = thicknessConv/nModules;

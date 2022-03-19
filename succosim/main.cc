@@ -63,7 +63,7 @@ int main(int argc, char** argv)
 
 	// load run manager
     auto runManager = new RunManager();
-    runManager->SetVerboseLevel(0);  // <<< set run manager verbosity here
+    runManager->SetVerboseLevel(1);  // <<< set run manager verbosity here
 
     // if in graphical mode, start visualisation
     #ifdef G4VIS_USE

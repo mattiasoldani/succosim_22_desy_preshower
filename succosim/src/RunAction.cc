@@ -22,12 +22,15 @@ RunAction::RunAction() :  G4UserRunAction()
     // e.g. analysis->CreateNtupleDColumn("NEvent");
 	
     analysis->CreateNtupleDColumn("NEvent");  // 0
-	analysis->CreateNtupleDColumn("EDep_Dummy");  // 1
-    analysis->CreateNtupleDColumn("EDep_Veto");  // 2
+	analysis->CreateNtupleDColumn("NGenParticles");  // 1
+	analysis->CreateNtupleDColumn("EDep_Dummy");  // 2
+    analysis->CreateNtupleDColumn("EDep_Veto");  // 3
 	for (int j = 0; j < 8; j++){
 		ostringstream columnName; columnName << "EDep_DC" << j;
-		analysis->CreateNtupleDColumn(columnName.str());  // 3, 4, ... - up to 8 active converter layers are supported
+		analysis->CreateNtupleDColumn(columnName.str());  // 4, 5, ... - up to 8 active converter layers are supported
 	}
+    
+    
   
     // --------------------------------------------------
     // ...uncomment this line for the test ntuple columns (implemented in include/TestMode.cc)
