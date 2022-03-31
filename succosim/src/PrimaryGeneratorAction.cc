@@ -27,7 +27,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     
     // constant features: particle type, energy, position, momentum direction
     G4ParticleDefinition* myParticle;
-    myParticle = G4ParticleTable::GetParticleTable()->FindParticle("gamma");
+    myParticle = G4ParticleTable::GetParticleTable()->FindParticle("e-");
     fGun->SetParticleDefinition(myParticle);
 	
     G4double zSrc = -14 * m;
@@ -36,7 +36,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
 	
 	G4SPSEneDistribution *eneDist = fGun->GetCurrentSource()->GetEneDist() ;
 	eneDist->SetEnergyDisType("Mono"); // monochromatic spectrum
-	eneDist->SetMonoEnergy(1000*MeV);
+	eneDist->SetMonoEnergy(100*MeV);
 	
 //     eneDist->SetEnergyDisType("Pow"); // power-law spectrum
 // 	eneDist->SetAlpha(0); // set 0 for flat distribution, -1 for 1/E distribution
@@ -71,7 +71,7 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	
     
     //max number of primary particles
-    int nMaxParticle=5;
+    int nMaxParticle=1;
     
     G4int nParticle = G4int(CLHEP::RandFlat::shoot(1., nMaxParticle+0.99));
     
