@@ -27,7 +27,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
     
     // constant features: particle type, energy, position, momentum direction
     G4ParticleDefinition* myParticle;
-    myParticle = G4ParticleTable::GetParticleTable()->FindParticle("e-");
+    myParticle = G4ParticleTable::GetParticleTable()->FindParticle("mu-");
     fGun->SetParticleDefinition(myParticle);
 	
     G4double zSrc = -14 * m;
