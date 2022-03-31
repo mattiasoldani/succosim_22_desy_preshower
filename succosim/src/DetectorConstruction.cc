@@ -149,7 +149,7 @@ void DetectorConstruction::ConstructSDandField()
     // create the sensitive detectors and bin them to the logical volumes here, or...
 	
 	// detector features
-	G4int nModules = 2; // nr. of converter+scintillator (veto excluded) modules - TO BE DEFINED ALSO IN DetectorConstruction::Construct (THIS FILE) & IN EventAction.cc!
+	G4int nModules = 1; // nr. of converter+scintillator (veto excluded) modules - TO BE DEFINED ALSO IN DetectorConstruction::Construct (THIS FILE) & IN EventAction.cc!
 	
     // veto
     VolumeEDepSD* sd_scintiVeto = new VolumeEDepSD("scintiVetoSD");

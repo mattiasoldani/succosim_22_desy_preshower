@@ -50,7 +50,7 @@ void EventAction::EndOfEventAction(const G4Event* event)
     // implement cast of the data collections, operations on them and ntuple filling here, or... 
 	
 	// detector features
-	G4int nModules = 2; // nr. of converter+scintillator (veto excluded) modules - TO BE DEFINED ALSO IN DetectorConstruction.cc (TWICE)!
+	G4int nModules = 1; // nr. of converter+scintillator (veto excluded) modules - TO BE DEFINED ALSO IN DetectorConstruction.cc (TWICE)!
 	
 	// get data collections
     G4int fEDepVetoId = sdm->GetCollectionID("scintiVetoSD/VolumeEDep");
