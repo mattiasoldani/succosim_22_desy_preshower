@@ -42,7 +42,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 	// detector features
     
     //read the nr. of scinti tiles from the .conf file
-    int nveto(1),nDC(4);
+    int nveto(1),nDC(1);
     ifstream conf_in("construction.conf"); string line;
     if(conf_in.is_open()){
         getline(conf_in,line); nveto=stoi(line);
@@ -50,7 +50,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
         conf_in.close();
     }
     
-	G4int nModules = 2; // nr. of converter+scintillator (veto excluded) modules - TO BE DEFINED ALSO IN DetectorConstruction::ConstructSDandField (THIS FILE) & IN EventAction.cc!
+	G4int nModules = 1; // nr. of converter+scintillator (veto excluded) modules - TO BE DEFINED ALSO IN DetectorConstruction::ConstructSDandField (THIS FILE) & IN EventAction.cc!
 	
 	G4double gapZLayers = 2 * cm; // edge-edge space between different layers (i.e. between scintillator and converter layers)
 	G4double gapZScinti = 2 * mm; // in case multiple scintillating tiles are used within single scintillator layers, space between them
