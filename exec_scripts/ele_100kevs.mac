@@ -1,0 +1,8 @@
+# initialise the simulation
+/run/initialize
+
+#electrons
+/gps/particle e-
+
+# shot 10k events
+/run/beamOn 100000
