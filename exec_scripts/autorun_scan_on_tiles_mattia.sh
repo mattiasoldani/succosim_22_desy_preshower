@@ -1,7 +1,7 @@
 # in order to make this work, copy it (& .mac dependencies) into the build directory
 
-Edistr=mono1000;
-ndistr=flat1-5
+Edistr=mono1000  # this is just for filename, actual beam parameter has to be set in PrimaryGeneratorAction manually
+ndistr=flat1-5  # this is just for filename, actual beam parameter has to be set in PrimaryGeneratorAction manually
 
 for nveto in 1 2 3 4; do
     
