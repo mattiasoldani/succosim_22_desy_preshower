@@ -1,3 +1,5 @@
+# in order to make this work, copy it (& .mac dependencies) into the build directory
+
 Edistr=mono1000;
 ndistr=flat1-5
 
