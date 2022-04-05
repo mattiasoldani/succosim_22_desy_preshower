@@ -36,7 +36,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
 	
 	G4SPSEneDistribution *eneDist = fGun->GetCurrentSource()->GetEneDist() ;
 	eneDist->SetEnergyDisType("Mono"); // monochromatic spectrum
-	eneDist->SetMonoEnergy(1000*MeV);
+	eneDist->SetMonoEnergy(10*MeV);
 	
 //     eneDist->SetEnergyDisType("Pow"); // power-law spectrum
 // 	eneDist->SetAlpha(0); // set 0 for flat distribution, -1 for 1/E distribution
